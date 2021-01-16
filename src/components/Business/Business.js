@@ -1,38 +1,33 @@
 import React from 'react';
 import './Business.css'
 
-const bussines = {
-  imageSrc: './pizza.webp',
-  name: 'MarginOtto Pizzeria',
-  address: '1010 Paddington Way',
-  city: 'Flavortown',
-  state: 'NY',
-  zipCode: '10101',
-  category: 'Italian',
-  rating: 4.5,
-  reviewCount: 90
-  
-}
+
+
+
 
 class Bussines extends React.Component{
-
+  constructor(props){
+    super(props)
+  }
+   
   render(){
+    const business = this.props.business
     return(
       <div className="Business">
       <div className="image-container">
-        <img src={bussines.imageSrc} alt={bussines.category}/>
+        <img src={business.imageSrc} alt={business.category}/>
       </div>
-      <h2>{bussines.state.name}</h2>
+      <h2>{business.name}</h2>
       <div className="Business-information">
         <div className="Business-address">
-          <p>{bussines.address}</p>
-          <p>{bussines.city}</p>
-          <p>{bussines.state} {bussines.zipCode}</p>
+          <p>{business.address}</p>
+          <p>{business.city}</p>
+          <p>{business.state} {business.zipCode}</p>
         </div>
         <div className="Business-reviews">
-          <h3>{bussines.category}</h3>
-          <h3 className="rating">{bussines.rating} stars</h3>
-          <p>{bussines.reviewCount} reviews</p>
+          <h3>{business.category}</h3>
+          <h3 className="rating">{business.rating} stars</h3>
+          <p>{business.reviewCount} reviews</p>
         </div>
       </div>
     </div>
